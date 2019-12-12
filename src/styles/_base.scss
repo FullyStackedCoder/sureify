@@ -1,0 +1,77 @@
+// COLORS
+$color-primary: #ba2b31;
+$color-primary-dark: #84191c;
+$color-primary-light: #ef393f;
+
+$color-secondary: #398ca6;
+$color-secondary-dark: #26687c;
+$color-secondary-light: #58c6e8;
+
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-grey-dark: #777;
+$color-grey-dark-2: #999;
+$color-grey-dark-3: #333;
+
+$color-white: #fff;
+$color-black: #000;
+
+// MEDIA BREAKPOINTS
+$bp-largest: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 56%;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    font-size: 50%;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    font-size: 46%;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      8,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+.absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+table {
+  border-spacing: 10px 10px;
+  border-collapse: collapse;
+}
